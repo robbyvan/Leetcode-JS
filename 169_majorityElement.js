@@ -1,3 +1,5 @@
+/*Moore Voting 成对消去, 如果major超过了半数, 剩下的一定是major*/
+
 function majorityElement(nums){
   var major = nums[0];
   var counter = 1;
