@@ -6,14 +6,15 @@ function invertTree(root){
   queue.push(root);
   while (queue.length > 0){
     var curr = queue.shift();
-    if (!curr.left){
+    if (curr.left){
       queue.push(curr.left);
     }
-    if (!curr.right){
+    if (curr.right){
       queue.push(curr.right);
     }
     var temp = curr.left;
     curr.left = curr.right;
     curr.right = temp;
   }
+  return root;
 }
