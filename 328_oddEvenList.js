@@ -24,7 +24,10 @@ function oddEvenList(head){
 
   var oddCurr = oddHead;
   var evenCurr = evenHead;
-  var flag = evenCurr.next?true:false;
+  var flag = true;
+  if (!oddCurr.next || !evenCurr.next){
+    flag = false;
+  }
 
   while (flag){
     if (!evenCurr.next){
