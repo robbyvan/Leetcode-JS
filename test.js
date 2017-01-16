@@ -1,12 +1,11 @@
-function titleToNumber(str){
-  var arr = str.split("");
-  for (var i = 0; i < arr.length; ++i){
-    arr[i] = arr[i].charCodeAt(0) - "A".charCodeAt(0) + 1;
+function trailingZeroes(n){
+  var count = 0;
+  var curr = 10;
+  var pow = 1;
+  while (curr < n){
+    count += pow;
+    pow += 1;
+    curr = curr * 10;
   }
-  var sum = 0;
-  for (i = arr.length-1; i > -1; i--){
-    sum = sum + arr[i] * Math.pow(26, arr.length - i - 1);
-  }
-  return sum;
+  return count;
 }
-console.log(titleToNumber("A"));
