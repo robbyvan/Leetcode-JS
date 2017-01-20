@@ -1,10 +1,10 @@
-function BSTIterator(root){
-  this.root = root;
-  this.curr = root;
+function BSTIterator(node){
+  this.root = node;
+  this.curr = node;
   this.stack = [];
   while (this.curr !== null){
     this.stack.push(this.curr);
-    this.curr = this.left;
+    this.curr = this.curr.left;
   }
 }
 BSTIterator.prototype = {
@@ -15,15 +15,13 @@ BSTIterator.prototype = {
       return false;
     }
   },
-  Next: function(){
+  next: function(){
     if (this.stack.length > 0){
       this.curr = this.stack.pop();
-      while (this.curr.left !== null){
-        this.stack.push(this.curr);
-        this.curr = this.curr.left;
-      }
-      if (this.curr.right !== null){
-        this.stack.push(this.curr.right);
+      var temp = this.curr.right;
+      while (temp !== null){
+        this.stack.push(temp);
+        temp = temp.left;
       }
       return this.curr.val;
     }else{
