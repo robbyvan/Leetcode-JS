@@ -15,4 +15,3 @@ function merge(nums1, m, nums2, n){
     }
 
 }
-merge([], 0, [1], 1);
