@@ -32,10 +32,13 @@ function myAtoi(str){
   }
   if (neg){
     if (integer > 2147483648){
-      integer = -2147483648;
+      integer = 2147483648;
     }
-    return integer;
+    return (0 - integer);
   }else{
+    if (integer > 2147483647){
+      integer = 2147483647;
+    }
     return integer;
   }
 }
